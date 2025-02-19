@@ -1,89 +1,86 @@
-**Rapport de Projet : Exploration d’un Labyrinthe en Réalité Virtuelle**
+**Rapport de TP : Exploration d’un Labyrinthe en Réalité Virtuelle**
 
 ---
 
-## **1. Introduction**
+## 1. Introduction
 
-### **1.1 Contexte et Objectifs**
-Ce projet de **réalité virtuelle (VR)** consiste en l’exploration d’un labyrinthe complexe, où l’utilisateur doit se frayer un chemin vers la sortie en utilisant des indices dissimulés dans l’environnement. Le but est de proposer une immersion réaliste et engageante, tout en exploitant des technologies VR avancées.
-
-### **1.2 Technologies utilisées**
-- **Unity** : Moteur de jeu utilisé pour la conception et la mise en œuvre du projet.
-- **Blender** : Logiciel utilisé pour la modélisation du labyrinthe.
-- **Google VR SDK** : Intégré pour gérer l’affichage et les interactions VR.
-- **Mini First Person Controller** : Utilisé pour la gestion des déplacements du joueur.
-- **C# (Unity Scripts)** : Pour implémenter les différentes mécaniques de jeu et interactions.
-- **Effets audio** : Ajoutés sur des statues 3D, se déclenchant lorsqu'elles entrent dans le champ de vision de l’utilisateur.
+Dans le cadre de ce travail pratique, nous avons développé une application de réalité virtuelle permettant aux utilisateurs d'explorer un labyrinthe complexe. L'objectif principal est de trouver la sortie en utilisant des indices dissimulés dans l'environnement, tout en respectant un temps imparti. Ce projet a été réalisé à l'aide de **Unity**, **Blender**, **Google VR**, et **Mini First Person Controller**.
 
 ---
 
-## **2. Modélisation et Conception du Labyrinthe**
+## 2. Objectifs du Projet
 
-### **2.1 Création du Labyrinthe**
-Le labyrinthe a été modélisé sous **Blender**, en prenant soin d’intégrer des chemins variés, des impasses et une sortie bien dissimulée pour rendre l’expérience immersive. Une fois modélisé, il a été exporté et importé dans Unity en tant qu’objet 3D.
-
-### **2.2 Ajout des Indices et Statues**
-Des **indices** sont cachés dans l’environnement pour guider le joueur vers la sortie. Ces indices peuvent être des objets interactifs ou des **statues 3D**, auxquelles des **effets audio** ont été ajoutés pour renforcer l’immersion.
-
-### **2.3 Effets Visuels et Sonores**
-- **Effets sonores** : Lorsque le joueur s’approche des statues, un effet sonore se déclenche s’ils sont dans son champ de vision.
-- **Effets lumineux** : Certains indices bénéficient d’une mise en valeur visuelle pour faciliter leur repérage.
+L’application vise à :
+- Offrir une expérience immersive de navigation dans un labyrinthe en réalité virtuelle.
+- Guider l'utilisateur vers la sortie grâce à des indices sonores et visuels.
+- Intégrer un chronomètre pour ajouter un défi temporel.
+- Proposer une rejouabilité en cas d’échec ou de succès.
 
 ---
 
-## **3. Implémentation du Déplacement en VR**
+## 3. Outils et Technologies Utilisés
 
-### **3.1 Google VR SDK**
-L’intégration du **Google VR SDK** permet d’utiliser un **casque VR** pour explorer le labyrinthe avec une meilleure immersion.
+### 3.1. Unity
+Nous avons utilisé **Unity** comme moteur de jeu pour la création de l’environnement interactif et la gestion des scripts.
 
-### **3.2 Mini First Person Controller**
-Le **Mini First Person Controller** a été utilisé pour gérer les déplacements du joueur dans l’environnement 3D. Ce composant permet un déplacement fluide avec :
-- **Un déplacement en avant basé sur l’orientation de la caméra**.
-- **Un saut pour franchir certains obstacles**.
-- **Une interaction avec les éléments du décor**.
+### 3.2. Blender
+Le labyrinthe a été **modélisé sous Blender** avant d’être importé dans Unity. Ce processus a permis de concevoir une structure optimisée et réaliste.
 
----
+### 3.3. Google VR
+Google VR a été intégré pour permettre une expérience immersive en réalité virtuelle, avec la gestion du **mouvement de la tête et de l’interaction utilisateur**.
 
-## **4. Développement et Programmation**
-
-### **4.1 Script de Déplacement du Joueur**
-Le script **VR_PlayerController.cs** a été écrit en **C#** pour gérer les déplacements du joueur. Il prend en charge :
-- La détection de l’orientation de la caméra.
-- La gestion de la gravité et des sauts.
-- La détection de l’entrée dans le champ de vision des statues.
-
-### **4.2 Gestion des Interactions Audio**
-Un script spécifique **audioPlayer.cs** permet de déclencher les effets sonores lorsque les statues entrent dans le champ de vision du joueur.
+### 3.4. Mini First Person Controller
+Pour le déplacement du joueur, nous avons utilisé **Mini First Person Controller**, permettant un contrôle fluide et intuitif.
 
 ---
 
-## **5. Résultats et Problèmes Rencontrés**
+## 4. Développement du Projet
 
-### **5.1 Résultats Obtenus**
-Le projet fonctionne et permet une exploration fluide du labyrinthe en **réalité virtuelle** avec un **casque VR compatible Google VR**. Les indices, effets audio et statues apportent une véritable **dimension immersive** à l’expérience.
+### 4.1. Modélisation du Labyrinthe
+- Le labyrinthe a été conçu avec Blender en prenant en compte des **chemins sinueux, des impasses et des zones de repère**.
+- Il a ensuite été importé dans Unity avec une texture et des lumières adaptées pour une meilleure immersion.
 
-### **5.2 Problèmes Techniques et Solutions**
-1. **Problème : Warnings liés à des variables non assignées dans les scripts Google VR.**
-   - **Solution :** Ajout explicite d’assignations ou suppression des variables inutilisées.
+### 4.2. Déplacement du Joueur
+- L’utilisateur se déplace grâce au **Mini First Person Controller**.
+- La direction du mouvement est basée sur l’orientation de la caméra principale.
+- Une physique adaptée a été appliquée pour assurer un déplacement réaliste.
 
-2. **Problème : Erreur CS0116 (Namespace contenant des méthodes directement).**
-   - **Solution :** Encapsuler les méthodes dans une classe Unity **MonoBehaviour**.
+### 4.3. Interaction avec les Statues 3D
+- Des **statues 3D** ont été placées à des endroits stratégiques du labyrinthe.
+- Lorsqu’une statue entre dans le champ de vision du joueur, un **effet sonore** est déclenché pour donner un indice.
+- Ces indices sonores aident l’utilisateur à s’orienter vers la sortie.
 
-3. **Problème : Échec de la compilation Unity avec erreur 'Build Failed'.**
-   - **Solution :** Vérification des logs d’erreur pour identifier les dépendances manquantes et ajustement des paramètres de build.
+### 4.4. Gestion du Minuteur
+- Un **compteur de temps** est affiché à l’écran dès le début de l’exploration.
+- Si le joueur **ne trouve pas la sortie avant la fin du temps imparti**, un message de **Game Over** apparaît et le joueur est redirigé au début du labyrinthe.
+- Si le joueur réussit à atteindre la sortie dans le temps imparti, un **message de victoire** s’affiche et il est également redirigé à l’entrée pour une nouvelle partie.
 
 ---
 
-## **6. Conclusion et Perspectives**
+## 5. Résultats et Tests
 
-Ce projet a permis d’explorer différentes facettes du développement **VR sous Unity**, en combinant modélisation 3D, interactions utilisateur et gestion du déplacement immersif.
+Des tests ont été effectués pour s’assurer du bon fonctionnement des éléments suivants :
+- **Navigation fluide** dans le labyrinthe sans collision anormale.
+- **Détection correcte des statues** et déclenchement des effets sonores au bon moment.
+- **Affichage du chronomètre** et gestion des conditions de victoire et d’échec.
+- **Compatibilité avec Google VR** pour assurer une immersion totale.
 
-### **Perspectives d’Amélioration**
-- **Ajout d’un système de score ou de chronomètre** pour inciter les joueurs à explorer plus efficacement.
-- **Intégration de nouveaux effets visuels** (brouillard, lumières dynamiques) pour renforcer l’ambiance.
-- **Optimisation des performances** pour améliorer la fluidité sur différentes plateformes VR.
+---
 
-En conclusion, ce projet a permis d’acquérir une bonne compréhension du développement en VR et de l’intégration de **Google VR dans Unity**.
+## 6. Améliorations Possibles
+
+- Ajouter un **système de score** basé sur le temps restant.
+- Intégrer une **génération procédurale du labyrinthe** pour plus de rejouabilité.
+- Introduire **plusieurs niveaux de difficulté** avec des labyrinthes plus complexes.
+- Améliorer les **effets sonores et visuels** pour renforcer l’expérience immersive.
+
+---
+
+## 7. Conclusion
+
+Ce projet de TP nous a permis d’explorer plusieurs aspects du **développement en réalité virtuelle**, de la **modélisation 3D** à l’**intégration dans Unity** en passant par l’utilisation de **Google VR**. Grâce aux interactions mises en place et au défi du chronomètre, l’expérience utilisateur est engageante et immersive.
+
+Ce TP a également mis en lumière l’importance des détails techniques dans la **conception d’un environnement interactif** et les défis liés à l’optimisation d’une application VR.
 
 ---
 
