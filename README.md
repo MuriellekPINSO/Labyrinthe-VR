@@ -23,8 +23,8 @@ Labyrinthe VR est une expérience immersive en réalité virtuelle où le joueur
 - Un smartphone Android ou un casque VR compatible  
 - Cloner le projet avec :  
   ```bash
-  git clone https://github.com/ton-profil/labyrinthe-vr.git
-  cd labyrinthe-vr
+  git clone https://github.com/MuriellekPINSO/Labyrinthe-VR.git
+  cd Labyrinthe-VR
   ```
 
 ### 🔹 **Exécution**  
